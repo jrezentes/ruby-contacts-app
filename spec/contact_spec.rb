@@ -1,5 +1,8 @@
 require('rspec')
 require('contact')
+require('address')
+require('email')
+require('phone_number')
 
 describe(Contact) do
   before() do
@@ -42,11 +45,52 @@ describe(Contact) do
     end
   end
 
+  describe('#id') do
+    it("returns proper id for a contact") do
+    test_contact = Contact.new({:first_name=>"Joseph", :last_name=>"Rezentes", :company=>"Rolemodel Software", :company_title=>"Junior Developer"})
+    expect(test_contact.id()).to(eq("Joseph Rezentes"))
+    end
+  end
+
+  describe('.find') do
+    it("finds proper contact using the id") do
+    test_contact = Contact.new({:first_name=>"Joseph", :last_name=>"Rezentes", :company=>"Rolemodel Software", :company_title=>"Junior Developer"})
+    expect(Contact.find(test_contact.id())).to(eq(test_contact))
+    end
+  end
+
   describe('.clear') do
     it("clears our contact list") do
       test_contact = Contact.new({:first_name=>"Joseph", :last_name=>"Rezentes", :company=>"Rolemodel Software", :company_title=>"Junior Developer"})
       test_contact.save()
       expect(Contact.clear()).to(eq([]))
+    end
+  end
+
+  describe('#set_address') do
+    it("lets us add an address to our contact") do
+    test_address = Address.new({:street=>"2904 Meadowview Ct.", :city=>"Apex", :state=>"NC", :zipcode=>"27539",  :address_type=>"Home"})
+    test_contact = Contact.new({:first_name=>"Joseph", :last_name=>"Rezentes", :company=>"Rolemodel Software", :company_title=>"Junior Developer"})
+    test_contact.set_address(test_address)
+    expect(test_contact.contact_address()).to(eq([test_address]))
+    end
+  end
+
+  describe('#set_email') do
+    it("lets us add an email to our contact") do
+    test_email = Email.new({:email=>"josephrezentes@gmail.com", :email_type=>"Work"})
+    test_contact = Contact.new({:first_name=>"Joseph", :last_name=>"Rezentes", :company=>"Rolemodel Software", :company_title=>"Junior Developer"})
+    test_contact.set_email(test_email)
+    expect(test_contact.contact_email()).to(eq([test_email]))
+    end
+  end
+
+  describe('#set_phone') do
+    it("lets us add a phone to our contact") do
+    test_phone = Phone_number.new({:number=>"919-446-7500", :number_type=>"Cell"})
+    test_contact = Contact.new({:first_name=>"Joseph", :last_name=>"Rezentes", :company=>"Rolemodel Software", :company_title=>"Junior Developer"})
+    test_contact.set_phone(test_phone)
+    expect(test_contact.contact_phone()).to(eq([test_phone]))
     end
   end
 end
