@@ -1,0 +1,19 @@
+<h1> <%= @contact.first_name() %> <%= @contact.last_name()%> <%= @contact.company() %> <%= @contact.company_title() %></h1>
+
+<% @contact.contact_address().each() do |address| %>
+<h3><%= address.address_type() %> Address: <%= address.street() %>, <%= address.city() %>, <%= address.state() %> <%= address.zipcode() %> </h3>
+<% end %>
+
+<% @contact.contact_phone().each() do |phone| %>
+<h3><%= phone.number_type() %> Phone: <%= phone.number() %> </h3>
+<% end %>
+
+<% @contact.contact_email().each() do |email| %>
+<h3><%= email.email_type() %> Email: <%= email.email() %></h3>
+<% end %>
+
+<style>
+</style>
+<div class="list">
+<a href="/contacts">Back to Contact List</a>
+</div>

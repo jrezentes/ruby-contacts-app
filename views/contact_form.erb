@@ -1,0 +1,74 @@
+<style>
+
+.form-inline > * {
+   margin:5px 3px;
+}
+
+</style>
+
+<h1>Add Contact</h1>
+
+<link href="../css/contact_form.css" rel="stylesheet" type="text/css">
+<form method='post' action='/contacts' role="form" class="form-inline">
+  <div class="form-group">
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input id="first_name" name="first_name" type="text" class="form-control" style="width:150px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input id="last_name" name="last_name" type="text" class="form-control" style="width:200px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="company">Company</label>
+      <input id="company" name="company" type="text" class="form-control" style="width:200px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="company_title">Company Title</label>
+      <input id="company_title" name="company_title" type="text" class="form-control" style="width:200px; height:35px;">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input id="street" name="street" type="text" class="form-control" style="width:200px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input id="city" name="city" type="text" class="form-control" style="width:75px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="state">State</label>
+      <input id="state" name="state" type="text" class="form-control" style="width:50px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="zipcode">Zipcode</label>
+      <input id="zipcode" name="zipcode" type="text" class="form-control" style="width:100px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="address_type">Address Type</label>
+      <input id="address_type" name="address_type" type="text" class="form-control" style="width:60px; height:35px;">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-group">
+      <label for="phone_number">Phone Number</label>
+      <input id="phone_number" name="phone_number" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="phone_type">Phone Type</label>
+      <input id="phone_type" name="phone_type" type="text" class="form-control" style="width:60px; height:35px;">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="email_type">Email Type</label>
+      <input id="email_type" name="email_type" type="text" class="form-control" style="width:60px; height:35px;">
+    </div>
+  </div>
+  <div>
+      <button type="submit">Add Contact</button>
+  </div>
+</form>
